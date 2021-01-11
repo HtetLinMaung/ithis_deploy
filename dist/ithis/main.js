@@ -102,6 +102,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _non_parenteral_non_parenteral_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./non-parenteral/non-parenteral.component */ "CDQU");
 /* harmony import */ var _non_parenteral_non_parenteral_form_non_parenteral_form_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./non-parenteral/non-parenteral-form/non-parenteral-form.component */ "Etrg");
 /* harmony import */ var _non_parenteral_non_parenteral_list_non_parenteral_list_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./non-parenteral/non-parenteral-list/non-parenteral-list.component */ "sHip");
+/* harmony import */ var _injection_injection_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./injection/injection.component */ "5Tfh");
+/* harmony import */ var _injection_injection_form_injection_form_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./injection/injection-form/injection-form.component */ "GKXl");
+/* harmony import */ var _injection_injection_list_injection_list_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./injection/injection-list/injection-list.component */ "WK1h");
+
+
+
 
 
 
@@ -134,6 +140,10 @@ InpatientMedicalRecordModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
                     path: 'inpatient-medication-record/non-parenteral',
                     component: _non_parenteral_non_parenteral_component__WEBPACK_IMPORTED_MODULE_9__["NonParenteralComponent"],
                 },
+                {
+                    path: 'inpatient-medication-record/injection',
+                    component: _injection_injection_component__WEBPACK_IMPORTED_MODULE_12__["InjectionComponent"],
+                },
             ]),
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](InpatientMedicalRecordModule, { declarations: [_instruction_instruction_component__WEBPACK_IMPORTED_MODULE_1__["InstructionComponent"],
@@ -144,7 +154,10 @@ InpatientMedicalRecordModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
         _stat_medication_stat_medication_list_stat_medication_list_component__WEBPACK_IMPORTED_MODULE_7__["StatMedicationListComponent"],
         _non_parenteral_non_parenteral_component__WEBPACK_IMPORTED_MODULE_9__["NonParenteralComponent"],
         _non_parenteral_non_parenteral_form_non_parenteral_form_component__WEBPACK_IMPORTED_MODULE_10__["NonParenteralFormComponent"],
-        _non_parenteral_non_parenteral_list_non_parenteral_list_component__WEBPACK_IMPORTED_MODULE_11__["NonParenteralListComponent"]], imports: [_shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]] }); })();
+        _non_parenteral_non_parenteral_list_non_parenteral_list_component__WEBPACK_IMPORTED_MODULE_11__["NonParenteralListComponent"],
+        _injection_injection_component__WEBPACK_IMPORTED_MODULE_12__["InjectionComponent"],
+        _injection_injection_form_injection_form_component__WEBPACK_IMPORTED_MODULE_13__["InjectionFormComponent"],
+        _injection_injection_list_injection_list_component__WEBPACK_IMPORTED_MODULE_14__["InjectionListComponent"]], imports: [_shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](InpatientMedicalRecordModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
@@ -158,6 +171,9 @@ InpatientMedicalRecordModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
                     _non_parenteral_non_parenteral_component__WEBPACK_IMPORTED_MODULE_9__["NonParenteralComponent"],
                     _non_parenteral_non_parenteral_form_non_parenteral_form_component__WEBPACK_IMPORTED_MODULE_10__["NonParenteralFormComponent"],
                     _non_parenteral_non_parenteral_list_non_parenteral_list_component__WEBPACK_IMPORTED_MODULE_11__["NonParenteralListComponent"],
+                    _injection_injection_component__WEBPACK_IMPORTED_MODULE_12__["InjectionComponent"],
+                    _injection_injection_form_injection_form_component__WEBPACK_IMPORTED_MODULE_13__["InjectionFormComponent"],
+                    _injection_injection_list_injection_list_component__WEBPACK_IMPORTED_MODULE_14__["InjectionListComponent"],
                 ],
                 imports: [
                     _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"],
@@ -174,10 +190,151 @@ InpatientMedicalRecordModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
                             path: 'inpatient-medication-record/non-parenteral',
                             component: _non_parenteral_non_parenteral_component__WEBPACK_IMPORTED_MODULE_9__["NonParenteralComponent"],
                         },
+                        {
+                            path: 'inpatient-medication-record/injection',
+                            component: _injection_injection_component__WEBPACK_IMPORTED_MODULE_12__["InjectionComponent"],
+                        },
                     ]),
                 ],
             }]
     }], null, null); })();
+
+
+/***/ }),
+
+/***/ "5Tfh":
+/*!***************************************************************************!*\
+  !*** ./src/app/inpatient-medical-record/injection/injection.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: InjectionComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InjectionComponent", function() { return InjectionComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var src_app_app_store_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app-store.service */ "7pZn");
+/* harmony import */ var _injection_store_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./injection-store.service */ "CCJJ");
+/* harmony import */ var src_app_framework_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/framework/http.service */ "KQ+0");
+/* harmony import */ var _framework_patient_header_patient_header_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../framework/patient-header/patient-header.component */ "dxN6");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _injection_list_injection_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./injection-list/injection-list.component */ "WK1h");
+/* harmony import */ var _injection_form_injection_form_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./injection-form/injection-form.component */ "GKXl");
+/* harmony import */ var _framework_delete_dialog_delete_dialog_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../framework/delete-dialog/delete-dialog.component */ "A5yb");
+
+
+
+
+
+
+
+
+
+
+function InjectionComponent_app_injection_list_9_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-injection-list");
+} }
+function InjectionComponent_app_injection_form_11_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-injection-form");
+} }
+function InjectionComponent_app_delete_dialog_13_Template(rf, ctx) { if (rf & 1) {
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "app-delete-dialog", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("onDelete", function InjectionComponent_app_delete_dialog_13_Template_app_delete_dialog_onDelete_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r3.deleteData(); })("onCancel", function InjectionComponent_app_delete_dialog_13_Template_app_delete_dialog_onCancel_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r5.cancelDelete(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+class InjectionComponent {
+    constructor(appStoreService, injectionStoreService, http) {
+        this.appStoreService = appStoreService;
+        this.injectionStoreService = injectionStoreService;
+        this.http = http;
+    }
+    ngOnInit() { }
+    tabClickHandler(n) {
+        const tabEle1 = document.getElementById('tab1');
+        const tabEle2 = document.getElementById('tab2');
+        switch (n) {
+            case 1:
+                tabEle1.style.background = '#3b5998';
+                tabEle2.style.background = '#8C9899';
+                break;
+            default:
+                tabEle2.style.background = '#3b5998';
+                tabEle1.style.background = '#8C9899';
+        }
+        this.injectionStoreService.tabNo = n;
+    }
+    deleteData() {
+        this.injectionStoreService.deleteDialog = false;
+        if (this.injectionStoreService.isUpdate) {
+            // this.http
+            //   .doPost(
+            //     `inpatient-medical-record/delete-instruction/${this.instructionStoreService.currentSysKey}`,
+            //     { syskey: this.instructionStoreService.currentSysKey }
+            //   )
+            //   .subscribe((data) => {
+            //     const tabEle1 = document.getElementById('tab1');
+            //     const tabEle2 = document.getElementById('tab2');
+            //     tabEle1.style.background = '#3b5998';
+            //     tabEle2.style.background = '#8C9899';
+            //     this.instructionStoreService.isUpdate = false;
+            //     this.instructionStoreService.tabNo = 1;
+            //   });
+        }
+    }
+    cancelDelete() {
+        this.injectionStoreService.deleteDialog = false;
+    }
+    // this is for dev only
+    toggleRank() {
+        this.appStoreService.isDoctorRank = !this.appStoreService.isDoctorRank;
+    }
+}
+InjectionComponent.ɵfac = function InjectionComponent_Factory(t) { return new (t || InjectionComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_app_store_service__WEBPACK_IMPORTED_MODULE_1__["AppStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_injection_store_service__WEBPACK_IMPORTED_MODULE_2__["InjectionStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_framework_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"])); };
+InjectionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: InjectionComponent, selectors: [["app-injection"]], decls: 17, vars: 9, consts: [[2, "width", "100%", "padding", "2rem 3rem"], [2, "display", "flex"], ["id", "tab1", 1, "tab__list-item", 2, "background", "#3b5998", 3, "click"], ["id", "tab2", 1, "tab__list-item", 3, "click"], [1, "card", "tab__body", 2, "flex", "1"], [4, "ngIf"], [3, "onDelete", "onCancel", 4, "ngIf"], [2, "position", "absolute", "top", "10px", "right", "10px", 3, "click"], [3, "onDelete", "onCancel"]], template: function InjectionComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-patient-header");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InjectionComponent_Template_div_click_3_listener() { return ctx.tabClickHandler(1); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " List ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InjectionComponent_Template_div_click_5_listener() { return ctx.tabClickHandler(2); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, " Injection ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, InjectionComponent_app_injection_list_9_Template, 1, 0, "app-injection-list", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](10, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, InjectionComponent_app_injection_form_11_Template, 1, 0, "app-injection-form", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](12, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, InjectionComponent_app_delete_dialog_13_Template, 1, 0, "app-delete-dialog", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](14, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "button", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InjectionComponent_Template_button_click_15_listener() { return ctx.toggleRank(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, " Toggle Rank\n");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](10, 3, ctx.injectionStoreService.tabNo$) == 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](12, 5, ctx.injectionStoreService.tabNo$) == 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](14, 7, ctx.injectionStoreService.deleteDialog$));
+    } }, directives: [_framework_patient_header_patient_header_component__WEBPACK_IMPORTED_MODULE_4__["PatientHeaderComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _injection_list_injection_list_component__WEBPACK_IMPORTED_MODULE_6__["InjectionListComponent"], _injection_form_injection_form_component__WEBPACK_IMPORTED_MODULE_7__["InjectionFormComponent"], _framework_delete_dialog_delete_dialog_component__WEBPACK_IMPORTED_MODULE_8__["DeleteDialogComponent"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["AsyncPipe"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJpbmplY3Rpb24uY29tcG9uZW50LmNzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](InjectionComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-injection',
+                templateUrl: './injection.component.html',
+                styleUrls: ['./injection.component.css'],
+            }]
+    }], function () { return [{ type: src_app_app_store_service__WEBPACK_IMPORTED_MODULE_1__["AppStoreService"] }, { type: _injection_store_service__WEBPACK_IMPORTED_MODULE_2__["InjectionStoreService"] }, { type: src_app_framework_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] }]; }, null); })();
 
 
 /***/ }),
@@ -557,6 +714,77 @@ const environment = {
 
 /***/ }),
 
+/***/ "CCJJ":
+/*!*******************************************************************************!*\
+  !*** ./src/app/inpatient-medical-record/injection/injection-store.service.ts ***!
+  \*******************************************************************************/
+/*! exports provided: InjectionStoreService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InjectionStoreService", function() { return InjectionStoreService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "qCKp");
+
+
+
+class InjectionStoreService {
+    constructor() {
+        this._currentSysKey = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](0);
+        // private readonly _instructions = new BehaviorSubject<Instruction[]>([]);
+        this._isUpdate = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](false);
+        this._tabNo = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](2);
+        this._deleteDialog = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](false);
+        this.currentSysKey$ = this._currentSysKey.asObservable();
+        // readonly instructions$ = this._instructions.asObservable();
+        this.isUpdate$ = this._isUpdate.asObservable();
+        this.tabNo$ = this._tabNo.asObservable();
+        this.deleteDialog$ = this._deleteDialog.asObservable();
+    }
+    set currentSysKey(v) {
+        this._currentSysKey.next(v);
+    }
+    // set instructions(v: Instruction[]) {
+    //   this._instructions.next(v);
+    // }
+    set tabNo(v) {
+        this._tabNo.next(v);
+    }
+    set isUpdate(v) {
+        this._isUpdate.next(v);
+    }
+    set deleteDialog(v) {
+        this._deleteDialog.next(v);
+    }
+    get isUpdate() {
+        return this._isUpdate.getValue();
+    }
+    get tabNo() {
+        return this._tabNo.getValue();
+    }
+    // get instructions(): Instruction[] {
+    //   return this._instructions.getValue();
+    // }
+    get currentSysKey() {
+        return this._currentSysKey.getValue();
+    }
+    get deleteDialog() {
+        return this._deleteDialog.getValue();
+    }
+}
+InjectionStoreService.ɵfac = function InjectionStoreService_Factory(t) { return new (t || InjectionStoreService)(); };
+InjectionStoreService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: InjectionStoreService, factory: InjectionStoreService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](InjectionStoreService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root',
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
 /***/ "CDQU":
 /*!*************************************************************************************!*\
   !*** ./src/app/inpatient-medical-record/non-parenteral/non-parenteral.component.ts ***!
@@ -656,7 +884,7 @@ NonParenteralComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function NonParenteralComponent_Template_div_click_5_listener() { return ctx.tabClickHandler(2); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, " Stat ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, " Non-Parenteral ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 1);
@@ -1066,6 +1294,170 @@ NonParenteralFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
                 styleUrls: ['./non-parenteral-form.component.css'],
             }]
     }], function () { return [{ type: _non_parenteral_store_service__WEBPACK_IMPORTED_MODULE_1__["NonParenteralStoreService"] }, { type: src_app_app_store_service__WEBPACK_IMPORTED_MODULE_2__["AppStoreService"] }]; }, null); })();
+
+
+/***/ }),
+
+/***/ "GKXl":
+/*!***********************************************************************************************!*\
+  !*** ./src/app/inpatient-medical-record/injection/injection-form/injection-form.component.ts ***!
+  \***********************************************************************************************/
+/*! exports provided: InjectionFormComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InjectionFormComponent", function() { return InjectionFormComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var src_app_app_store_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/app-store.service */ "7pZn");
+/* harmony import */ var _injection_store_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../injection-store.service */ "CCJJ");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+
+
+
+
+
+
+function InjectionFormComponent_button_4_Template(rf, ctx) { if (rf & 1) {
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InjectionFormComponent_button_4_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r4.save(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Update ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function InjectionFormComponent_button_6_Template(rf, ctx) { if (rf & 1) {
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 18);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InjectionFormComponent_button_6_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r6.save(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Save ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function InjectionFormComponent_div_18_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const header_r8 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", header_r8, " ");
+} }
+function InjectionFormComponent_div_31_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "input", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+class InjectionFormComponent {
+    constructor(appStoreService, injectionStoreService) {
+        this.appStoreService = appStoreService;
+        this.injectionStoreService = injectionStoreService;
+        this.headers = [
+            'Route',
+            'Medication',
+            'Dose',
+            'Prescription remarks',
+            'Time Admin',
+            'Given By',
+            "Dr's remark",
+        ];
+        this.date = '';
+    }
+    ngOnInit() { }
+    getHeaders() {
+        if (this.appStoreService.isDoctorRank) {
+            return ['Route', 'Medication', 'Dose', 'Frequency', 'Duration'];
+        }
+        else {
+            return [
+                'Route',
+                'Medication',
+                'Dose',
+                'Frequency',
+                'Duration',
+                "Nurse's Sign",
+            ];
+        }
+    }
+    new() { }
+    save() { }
+    delete() { }
+    print() { }
+}
+InjectionFormComponent.ɵfac = function InjectionFormComponent_Factory(t) { return new (t || InjectionFormComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_app_store_service__WEBPACK_IMPORTED_MODULE_1__["AppStoreService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_injection_store_service__WEBPACK_IMPORTED_MODULE_2__["InjectionStoreService"])); };
+InjectionFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: InjectionFormComponent, selectors: [["app-injection-form"]], decls: 33, vars: 11, consts: [[2, "flex", "1"], [2, "display", "flex", "margin-top", "1rem", "margin-bottom", "2rem"], [1, "btn", "btn-primary", "btn__crud", 3, "click"], ["class", "btn btn-success btn__crud", 3, "click", 4, "ngIf"], [1, "btn", "btn-danger", "btn__crud", 3, "click"], [1, "flex__row"], [1, "p__5", 2, "flex", "0 0 20%"], [1, "form__label"], ["type", "datetime-local", "step", "1", 1, "form-control", "form__input", 3, "ngModel", "ngModelChange"], ["class", "flex-table__column", "style", "font-size: 14px", 4, "ngFor", "ngForOf"], [1, "flex-table__row"], [1, "flex-table__column"], [1, "form-control", "form__input"], [1, "flex-table__column", 2, "justify-content", "space-between"], [1, "form-control", "form__input", 2, "flex", "0 0 47%", "text-align", "right"], [1, "form-control", "form__input", 2, "flex", "0 0 47%"], ["type", "text", 1, "form-control", "form__input"], ["class", "flex-table__column", 4, "ngIf"], [1, "btn", "btn-success", "btn__crud", 3, "click"], [1, "flex-table__column", 2, "font-size", "14px"], ["type", "checkbox", 1, "__checkbox"]], template: function InjectionFormComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InjectionFormComponent_Template_button_click_2_listener() { return ctx.new(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "New");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, InjectionFormComponent_button_4_Template, 2, 0, "button", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](5, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, InjectionFormComponent_button_6_Template, 2, 0, "button", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](7, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InjectionFormComponent_Template_button_click_8_listener() { return ctx.delete(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Delete");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InjectionFormComponent_Template_button_click_10_listener() { return ctx.print(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Print");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "label", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Date");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "input", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function InjectionFormComponent_Template_input_ngModelChange_16_listener($event) { return ctx.date = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, InjectionFormComponent_div_18_Template, 2, 1, "div", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "div", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "select", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "input", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](25, "input", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "select", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](28, "input", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](30, "input", 16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](31, InjectionFormComponent_div_31_Template, 2, 0, "div", 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](32, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](5, 5, ctx.injectionStoreService.isUpdate$));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](7, 7, ctx.injectionStoreService.isUpdate$));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.date);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.getHeaders());
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](32, 9, ctx.appStoreService.isDoctorRank$));
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["AsyncPipe"]], styles: [".flex-table__column[_ngcontent-%COMP%]:nth-child(2) {\n  flex-basis: 140px;\n}\n.flex-table__column[_ngcontent-%COMP%]:nth-child(6) {\n  flex: 0 0 120px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluamVjdGlvbi1mb3JtLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpQkFBaUI7QUFDbkI7QUFDQTtFQUNFLGVBQWU7QUFDakIiLCJmaWxlIjoiaW5qZWN0aW9uLWZvcm0uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mbGV4LXRhYmxlX19jb2x1bW46bnRoLWNoaWxkKDIpIHtcbiAgZmxleC1iYXNpczogMTQwcHg7XG59XG4uZmxleC10YWJsZV9fY29sdW1uOm50aC1jaGlsZCg2KSB7XG4gIGZsZXg6IDAgMCAxMjBweDtcbn1cbiJdfQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](InjectionFormComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-injection-form',
+                templateUrl: './injection-form.component.html',
+                styleUrls: ['./injection-form.component.css'],
+            }]
+    }], function () { return [{ type: src_app_app_store_service__WEBPACK_IMPORTED_MODULE_1__["AppStoreService"] }, { type: _injection_store_service__WEBPACK_IMPORTED_MODULE_2__["InjectionStoreService"] }]; }, null); })();
 
 
 /***/ }),
@@ -3885,6 +4277,42 @@ InstructionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 
 /***/ }),
 
+/***/ "WK1h":
+/*!***********************************************************************************************!*\
+  !*** ./src/app/inpatient-medical-record/injection/injection-list/injection-list.component.ts ***!
+  \***********************************************************************************************/
+/*! exports provided: InjectionListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InjectionListComponent", function() { return InjectionListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class InjectionListComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+InjectionListComponent.ɵfac = function InjectionListComponent_Factory(t) { return new (t || InjectionListComponent)(); };
+InjectionListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: InjectionListComponent, selectors: [["app-injection-list"]], decls: 2, vars: 0, template: function InjectionListComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "injection-list works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJpbmplY3Rpb24tbGlzdC5jb21wb25lbnQuY3NzIn0= */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](InjectionListComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-injection-list',
+                templateUrl: './injection-list.component.html',
+                styleUrls: ['./injection-list.component.css']
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
 /***/ "WWhL":
 /*!****************************************************!*\
   !*** ./src/app/framework/table/table.component.ts ***!
@@ -5408,12 +5836,15 @@ class LoginComponent {
             case 4:
                 this.router.navigate(['/inpatient-medication-record/non-parenteral']);
                 break;
+            case 5:
+                this.router.navigate(['/inpatient-medication-record/injection']);
+                break;
         }
     }
     ngOnInit() { }
 }
 LoginComponent.ɵfac = function LoginComponent_Factory(t) { return new (t || LoginComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
-LoginComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoginComponent, selectors: [["app-login"]], decls: 8, vars: 0, consts: [[3, "click"]], template: function LoginComponent_Template(rf, ctx) { if (rf & 1) {
+LoginComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoginComponent, selectors: [["app-login"]], decls: 10, vars: 0, consts: [[3, "click"]], template: function LoginComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoginComponent_Template_button_click_0_listener() { return ctx.navigate(1); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "inspection form");
@@ -5429,6 +5860,10 @@ LoginComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "button", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoginComponent_Template_button_click_6_listener() { return ctx.navigate(4); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "non-parenteral form");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoginComponent_Template_button_click_8_listener() { return ctx.navigate(5); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "injection form");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJsb2dpbi5jb21wb25lbnQuY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LoginComponent, [{
